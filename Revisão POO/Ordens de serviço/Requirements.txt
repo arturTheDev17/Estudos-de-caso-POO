@@ -1,0 +1,55 @@
+Crie uma classe abstrata chamada "Usuario" que contenha os atributos "cpf" e "nome".
+Crie as classes "Solicitante", "Atendente" e "Administrador" que herdem da classe abstrata "Usuario".
+Crie uma interface "CriadorOrdem" com o método "criarOrdem(OrdemDeServico ordem)".
+Crie uma interface "EditorOrdem" com o método "editarOrdem(int numeroOrdem, OrdemDeServico ordem)".
+Crie uma interface "VisualizadorOrdem" com o método "verOrdens()".
+Crie uma interface "RemovedorOrdem" com o método "deletarOrdem(int numeroOrdem)".
+Crie uma classe abstrata chamada "OrdemDeServico" que contenha os atributos "numeroOrdem", "descricao".
+Adicione também um atributo "status" para representar o estado atual da ordem.
+Crie as classes "OrdemManutencao" e "OrdemInstalacao" que herdem da classe abstrata "OrdemDeServico". Adicione
+atributos específicos a cada classe, como "equipamento" e "dataManutencao" para a classe "OrdemManutencao" e
+"cliente" e "dataInstalacao" para a classe "OrdemInstalacao".
+Crie uma interface chamada "Imprimivel" que declare o método "mostrarDados()".
+Faça as classes "OrdemManutencao" e "OrdemInstalacao" implementarem a interface "Imprimivel". No método
+"mostrarDados()", retorne os atributos relevantes de cada ordem.
+Crie uma classe chamada "Relatorio" que contenha um método "gerarRelatorio(Imprimivel objeto)". Dentro do
+método "gerarRelatorio()", chame o método "mostrarDados()" do objeto passado como parâmetro.
+Crie uma classe executável chamada "Main" para testar a aplicação. Dentro da classe "Main", instancie algumas ordens
+de serviço, tanto de manutenção como de instalação. Defina os atributos correspondentes e atualize o status das
+ordens conforme necessário.
+Crie um objeto "relatorio" e execute o método "gerarRelatorio()" da classe "Relatorio" para exibir os dados de cada
+ordem de serviço.
+Crie uma classe chamada "GerenciadorOrdens" que possua um ArrayList de ordens de serviço.
+Incremente a classe "OrdemDeServico" com o método "atualizarStatus(String novoStatus)" para permitir a atualização
+do status de uma ordem
+Implemente os métodos "criarOrdem(OrdemDeServico ordem)", "removerOrdem(OrdemDeServico ordem)" e "procurarOrdem(int
+numeroOrdem)" na classe "GerenciadorOrdens".
+
+No método "criarOrdem()", adicione a ordem fornecida ao ArrayList.
+No método "removerOrdem()", remova a ordem fornecida do ArrayList. No método "procurarOrdem()", percorra o
+ArrayList e retorne a ordem de serviço correspondente ao número fornecido, ou null se não for encontrada.
+Faça a classe "GerenciadorOrdens" implementar a interface "Imprimivel". No método "mostrarDados()", percorra o
+ArrayList de ordens de serviço e chame o método "mostrarDados()" de cada ordem.
+Implemente as interfaces onde achar necessário para resolver o problema.
+
+
+
+
+
+
+
+
+
+
+
+Um usuário solicitante deve poder criar ordens de serviço,
+editar uma de suas ordens de serviço e visualizar as suas
+ordens de serviço.
+
+Um usuário atendente deve poder criar ordens de serviço,
+editar todas as ordens de serviço e visualizar todas as ordens
+de serviço.
+
+Um usuário administrador deve poder criar ordens de serviço,
+editar todas as ordens de serviço, remover todas as ordens
+de serviço e visualizar todas as ordens de serviço.
