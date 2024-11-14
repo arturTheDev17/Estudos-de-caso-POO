@@ -1,0 +1,19 @@
+TENDO UMA CLASSE DE EXEMPLO
+
+public class Cliente {
+	private String nome;
+
+}
+
+MÉTODO DE MESMO NOME DA CLASSE
+
+public Cliente ( String nome ) { // método construtor (obriga a classe a começar com algum atributo definido)
+	setNome( nome );
+
+}
+
+MAIS DE UM MÉTODO COM MESMO NOME
+//sobrecarga de método!!!!!
+public Cliente () {
+
+}
