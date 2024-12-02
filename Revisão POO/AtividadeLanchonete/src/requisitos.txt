@@ -1,0 +1,98 @@
+
+Regras de Negócio
+Produtos devem ter um código único.
+Confirmação é necessária antes de adicionar ou remover um produto do cardápio.
+O preço total de um pedido é a soma dos preços individuais dos itens.
+Garçons recebem 5% de acréscimo em seu pagamento por cada pedido realizado.
+Descontos para combos:
+2 itens: 5%
+3 itens: 10%
+4 ou mais itens: 15%
+
+Classes e Atributos
+
+    Produto (Classe Abstrata):
+    Atributos:
+    codigo (int): identificador único do produto.
+    descricao (String): descrição do produto.
+    preco (double): preço do produto.
+    Métodos Abstratos:
+    calcularPreco(double desconto): double: calcula o preço do produto com desconto.
+    exibirDetalhes(): String: exibe os detalhes do produto.
+
+
+        Lanche (Subclasse de Produto):
+        Atributos Adicionais:
+        peso (double): peso do lanche em kg.
+        Métodos:
+        calcularPreco(double desconto): double
+        exibirDetalhes(): String
+
+        Bebida (Subclasse de Produto):
+        Atributos Adicionais:
+        volume (double): volume da bebida em litros.
+        Métodos:
+        calcularPreco(double desconto): double
+        exibirDetalhes(): String
+
+        Outro (Subclasse de Produto):
+        Atributos Adicionais:
+        tamanho (String): tamanho do item (por exemplo, "Pequeno", "Médio", "Grande").
+        Métodos:
+        calcularPreco(double desconto): double
+        exibirDetalhes(): String
+
+        Combo (Subclasse de Produto):
+        Atributos:
+        produtos (ArrayList<Produto>)
+        desconto (double)
+        Métodos:
+        calcularDesconto(): double
+        calcularPreco(double desconto): double
+        exibirDetalhes(): String
+
+
+    Pessoa:
+    Atributos:
+    nome (String)
+    endereco (String)
+    telefone (String)
+
+        Cliente (Subclasse de Pessoa):
+        Atributos:
+        pedidos (ArrayList<Pedido>)
+        Métodos:
+        fazerPedido(Pedido pedido)
+        cancelarPedido(Pedido pedido)
+        visualizarPedidos(): String
+
+        Garcom (Subclasse de Pessoa):
+        Atributos:
+        pagamento (double)
+        Métodos:
+        cadastrarPedido(Cliente cliente, Pedido pedido)
+        exibirMenu(): String
+        adicionarItemAoPedido(Pedido pedido, Produto item)
+        removerItemDoPedido(Pedido pedido, int codigo)
+        confirmarPedido(Pedido pedido)
+        calcularPagamento(Pedido pedido): double
+
+    Pedido:
+    Atributos:
+    cliente (Cliente)
+    itens (ArrayList<Produto>)
+    status (String)
+    Métodos:
+    adicionarItem(Produto item)
+    removerItem(int codigo)
+    calcularTotal(): double
+    confirmarPedido()
+
+    GerenciadorDeCardapio:
+    Atributos:
+    cardapio (ArrayList<Produto>)
+    Métodos:
+    adicionarProduto(Produto produto)
+    removerProduto(int codigo)
+    editarProduto(int codigo, Produto novoProduto)
+    listarProdutos(): ArrayList<Produto>
